@@ -5,7 +5,7 @@
       <div>Base Currency:</div>
       <div>
         <select v-model="selectedCurrency" v-on:change="getRates" id="baseCurrencySel">
-          <option v-for="(id, currency) in currencies">
+          <option v-for="currency in currencies">
             {{ currency.name }}
           </option>
         </select>
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
 
-    getRates: function (event){
+    getRates: function (){
           const vm = this;
           axios.all([
             this.getCurrentRates(), 
