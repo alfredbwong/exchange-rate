@@ -10,18 +10,11 @@
           </option>
         </select>
       </div>
-      <ul>
-        <li v-for="(rate, foreignCurrency) in info">
-          {{ rate }} = {{ foreignCurrency}}
-        </li>
-      </ul>
     </div>
   </div>
 </template>
 
 <script>
-const axios = require('axios');
-
 export default {
   data : function (){
     return {
@@ -34,19 +27,9 @@ export default {
       selectedCurrency: null
     }
   },
-  methods: {
-
+  methods : {
     getRates: function (){
-          const vm = this;
-          axios.all([
-            this.getCurrentRates(), 
-          ])
-          .then(axios.spread(function(rateData){
-            vm.info = rateData.data.rates
-          }))
-    },
-    getCurrentRates() {
-      return axios.get('https://api.exchangeratesapi.io/latest?base=' + this.selectedCurrency)
+      this.$emit('getRates', this.selectedCurrency)
     }
   }
 }
