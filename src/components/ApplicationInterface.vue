@@ -39,7 +39,7 @@ export default {
       ])
       .then(axios.spread(function(rateData, historicalData){
         vm.info = rateData.data.rates,
-        vm.historicalData = historicalData.data.rates
+        vm.historicalData = vm.formatHistoricalData(historicalData.data.rates)
       }))
     },
     getCurrentRates() {
@@ -47,11 +47,9 @@ export default {
     },
     getHistorialData() {
       var url = 'https://api.exchangeratesapi.io/history?start_at='+this.getPastMonthDate()+'&end_at='+this.getCurrentDate()+'&base=CAD&symbols=USD'
-      console.log(url)
       return axios.get(url)
     },
     getCurrentDate(){
-      console.log("here")
       var today = new Date();
       var dd = today.getDate();
       var mm = today.getMonth()+1; //As January is 0.
@@ -70,6 +68,14 @@ export default {
       if(dd<10) dd='0'+dd;
       if(mm<10) mm='0'+mm;
       return (yyyy+'-'+mm+'-'+dd);
+    },
+    formatHistoricalData(jsonData){
+      var data = [];
+      data.push (["Date", "Rate"]);
+      for (var i in jsonData){
+        data.push([i, jsonData[i].USD])
+      }
+      return data;
     }
   }
 }
