@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img id="logo" alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <HeaderPanel />
     <ApplicationInterface />
@@ -31,9 +30,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.logo{
-  height: 80px;
-  width: 80px;
-  margin: auto;
-}
+
 </style>

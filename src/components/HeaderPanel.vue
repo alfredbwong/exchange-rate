@@ -1,7 +1,8 @@
 <template>
   <div id="header-panel">
     <h1>{{  titleText }}</h1>
-    <span> Alfred Wong &copy;</span>
+    <img id="logo" alt="Vue logo" src="../assets/companylogo.png">
+    <p> Alfred Wong &copy;</p>
     <p> This simple application is for learning purposes. It calls a foreign exchange API and graphs it</p>
   </div>
 </template>
@@ -21,5 +22,10 @@
 <style scoped>
 div{
   border: solid 1px;
+}
+#logo{
+  height: 150px;
+  width: 150px;
+  margin: auto;
 }
 </style>

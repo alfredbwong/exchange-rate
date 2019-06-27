@@ -11,7 +11,7 @@ export default {
     return {
       chartOptions: {
         chart: {
-          title: "Historical Data in Past Year Against the CAD",
+          title: 'Historical Data in Past Year Against the CAD',
           subtitle: 'Sales, Expenses, and Profit: 2014-2017'
 
         }
