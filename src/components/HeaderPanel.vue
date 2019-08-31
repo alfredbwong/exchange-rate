@@ -20,6 +20,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#header-panel{
+  background-color: #6299be;
+}
 div{
   border: solid 1px;
 }

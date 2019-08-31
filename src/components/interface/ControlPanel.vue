@@ -10,8 +10,8 @@
           </option>
         </select>
       </div>
-      <div class="historical-input">
-        <span>Historical Data (Against CAD): </span>
+      <div>Historical Data (Against CAD)</div>
+      <div>
         <input type="radio" id="radio-select-usd" name="radio-select" value="USD" v-model="picked" v-on:change="getHistoricalData">
         <label for="USD">USD</label>
         <input type="radio" id="radio-select-gbp" name="radio-select" value="GBP" v-model="picked" v-on:change="getHistoricalData">
@@ -57,7 +57,5 @@ export default {
 .controls select{
   width: 100%;
 }
-.historical-input{
-  grid-column: 1 / span 2;
-}
+
 </style>
